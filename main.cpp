@@ -8,22 +8,10 @@ int main()
   try{
     table = create(m, n);
   } catch (const std::bad_alloc & e){
-    std::cerr << "Out of memot\n";
+    std::cerr << "Out of memory\n";
     return 1;
   }
-
-  for(size_t i = 0; i < m; ++i){
-    for (size_t j = 0; j < n; ++j){
-      std::cin >> table[i][j];
-    }
-  }
-
-  for(size_t i = 0; i < m; ++i){
-    std::cout << table[i][0];
-    for(size_t j = 1; j < n; ++j){
-      std::cout << " " << table[i][j];
-    }
-    std::cout << "\n";
-  }
+  enter(table, m, n);
+  out(table, m, n);
   clear(table, m);
 }
