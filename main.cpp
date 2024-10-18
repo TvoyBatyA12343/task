@@ -6,7 +6,7 @@ int main()
   std::cin >> m >> n;
   int** table = nullptr;
   try{
-    table = matrix(m, n);
+    table = create(m, n);
   } catch (const std::bad_alloc & e){
     std::cerr << "Out of memot\n";
     return 1;
