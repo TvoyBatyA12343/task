@@ -1,29 +1,5 @@
 #include <iostream>
 #include "matrix.hpp"
-
-int main()
-{
-  size_t m = 0, n = 0;
-  std::cin >> m >> n;
-  if(!std::cin){
-    std::cerr << "Input Error!\n";
-    return 1;
-  }
-  int** table = nullptr;
-  try{
-    table = alloc(m, n);
-    if(!std::cin){
-      std::cerr << "Input Error!\n";
-    }
-  } catch (const std::bad_alloc & e){
-    std::cerr << "Out of memory\n";
-    return 1;
-  }
-  input(std::cin, table, m, n);
-  print(std::cout, table, m, n);
-  clear(table, m);
-}
-
 struct Matrix
 {
   ~Matrix()
@@ -44,8 +20,36 @@ struct Matrix
   {
     ::input(in, t_, m_, n_);
   }
-
+  void getRowNumber()
+  {
+    std::cout << m_ << "\n";
+  }
+  void getColNumber()
+  {
+    std::cout << n_ << "\n";
+  }
 
   int** t_;
   size_t m_, n_;
 };
+
+int main()
+{
+  size_t m = 0, n = 0;
+  std::cin >> m >> n;
+  if(!std::cin){
+    std::cerr << "Input Error!\n";
+    return 1;
+  }
+  Matrix mtx(m, n);
+  mtx.input(std::cin);
+  if (!std::cin)
+  {
+    return 1;
+  }
+  mtx.print(std::cout);
+  mtx.getRowNumber();
+  mtx.getColNumber();
+
+}
+
