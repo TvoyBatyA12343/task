@@ -13,6 +13,11 @@ struct Matrix
     t_(::alloc(m, n)), m_(m), n_(n)
   {}
 
+  Matrix(const Matrix& mtx2) : m_(mtx2.m_), n_(mtx2.n_);
+  {
+    t_ = ::alloc(m_, n_);
+  }
+
   void print(std::ostream& out)
   {
     ::print(out, t_, m_, n_);
@@ -33,12 +38,6 @@ struct Matrix
     std::cout << n_ << "\n";
   }
 
-  void changeSize(size_t k, size_t l)
-  {
-    ::clear(t_, m_);
-    t_ = ::alloc(k, l);
-
-  }
 
   int** t_;
   size_t m_, n_;

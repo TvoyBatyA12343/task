@@ -19,10 +19,8 @@ int main()
   mtx.getRowNumber();
   mtx.getColNumber();
   size_t k = 3; size_t l = 3;
-  mtx.changeSize(4, 4);
   mtx.getRowNumber();
-  mtx.getColNumber();
-  mtx.input(std::cin);
-  mtx.print(std::cout);
+  Matrix mtx2 {mtx};
+  mtx2.getRowNumber();
 }
 
