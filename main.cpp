@@ -25,5 +25,6 @@ int main()
   mtx.getColNumber();
   size_t k = 3; size_t l = 3;
   mtx.getRowNumber();
+  Matrix mtx2 {mtx};
 }
 

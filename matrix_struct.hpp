@@ -8,8 +8,6 @@ struct Matrix
 
   Matrix(size_t m, size_t n);
 
-  Matrix(const Matrix& mtx2);
-
   void print(std::ostream& out);
 
   void input(std::istream& in);
@@ -18,6 +16,7 @@ struct Matrix
 
   void getColNumber();
 
+  Matrix(const Matrix& other);
 
   int** t_;
   size_t m_, n_;
