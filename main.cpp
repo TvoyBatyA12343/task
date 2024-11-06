@@ -1,5 +1,10 @@
 #include <iostream>
-#include "matrix_struct.hpp"
+#include "matrix_struct.cpp"
+
+
+// Василий Александрович, как по-нормальному разделять класс на файлы?
+// В этом проекте у меня есть hpp для класса матрицы, но если его подключаю
+// в main, то он пишет ко всем вызовам методов undefined reference.
 
 int main()
 {
@@ -20,7 +25,5 @@ int main()
   mtx.getColNumber();
   size_t k = 3; size_t l = 3;
   mtx.getRowNumber();
-  Matrix mtx2 {mtx};
-  mtx2.getRowNumber();
 }
 

@@ -30,7 +30,7 @@ void Matrix::getColNumber()
   std::cout << n_ << "\n";
 }
 
-Matrix::Matrix(const Matrix& mtx2) : m_(mtx2.m_), n_(mtx2.n_);
+Matrix::Matrix(const Matrix& mtx2) : m_(mtx2.m_), n_(mtx2.n_)
 {
-  mtx2.t_ = ::alloc(m_, n_);
+  t_ = ::alloc(m_, n_);
 }

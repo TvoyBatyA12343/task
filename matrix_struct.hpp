@@ -4,33 +4,19 @@
 
 struct Matrix
 {
-  ~Matrix()
-  {
-  }
+  ~Matrix();
 
-  Matrix(size_t m, size_t n):
-    t_(::alloc(m, n)), m_(m), n_(n)
-  {}
+  Matrix(size_t m, size_t n);
 
-  Matrix(const Matrix& mtx2) : m_(mtx2.m_), n_(mtx2.n_);
-  {
-  }
+  Matrix(const Matrix& mtx2);
 
-  void print(std::ostream& out)
-  {
-  }
+  void print(std::ostream& out);
 
-  void input(std::istream& in)
-  {
-  }
+  void input(std::istream& in);
 
-  void getRowNumber()
-  {
-  }
+  void getRowNumber();
 
-  void getColNumber()
-  {
-  }
+  void getColNumber();
 
 
   int** t_;
